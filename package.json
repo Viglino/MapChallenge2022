@@ -1,0 +1,41 @@
+{
+  "name": "mapchallenge2022",
+  "version": "1.0.0",
+  "description": "My #30DayMapChange 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel --dist-dir ./.dist index.html",
+    "build": "parcel build --dist-dir ./docs ./index.html --public-url ./ --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viglino/MapChallenge2022.git"
+  },
+  "keywords": [
+    "map",
+    "challenge",
+    "ol",
+    "ol-ext"
+  ],
+  "author": "Jean-Marc Viglino (https://github.com/Viglino)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Viglino/MapChallenge2022/issues"
+  },
+  "homepage": "https://github.com/Viglino/MapChallenge2022#readme",
+  "staticFiles": {
+    "staticPath": "assets",
+    "watcherGlob": "**"
+  },
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.7.0",
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "dependencies": {
+    "ol": "^7.1.0",
+    "ol-ext": "^4.0.3",
+    "webfontloader": "^1.6.28"
+  }
+}
