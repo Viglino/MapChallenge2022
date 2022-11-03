@@ -22,4 +22,8 @@ const map = new Map({
 })
 map.addControl(new Permalink({ visible: false }))
 
+/* DEBUG */
+window.map = map
+/**/
+
 export default map

@@ -3,11 +3,11 @@
 */
 @font-face {
   font-family: 'fontmaki';
-  src: url('../font/fontmaki.eot?66752613');
-  src: url('../font/fontmaki.eot?66752613#iefix') format('embedded-opentype'),
-       url('../font/fontmaki.woff?66752613') format('woff'),
-       url('../font/fontmaki.ttf?66752613') format('truetype'),
-       url('../font/fontmaki.svg?66752613#fontmaki') format('svg');
+  src: url('./fontmaki.eot?66752613');
+  src: url('./fontmaki.eot?66752613#iefix') format('embedded-opentype'),
+       url('./fontmaki.woff?66752613') format('woff'),
+       url('./fontmaki.ttf?66752613') format('truetype'),
+       url('./fontmaki.svg?66752613#fontmaki') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontmaki';
-    src: url('../font/fontmaki.svg?66752613#fontmaki') format('svg');
+    src: url('./fontmaki.svg?66752613#fontmaki') format('svg');
   }
 }
 */
