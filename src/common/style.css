@@ -28,6 +28,25 @@ h1 img {
   height: 1em;
   vertical-align: text-top;
 }
+h1 i {
+  position: absolute;
+  font-style: unset;
+  right: 0;
+  font-size: .8em;
+  width: 1.2em;
+  line-height: 1.2em;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #0AF;
+  color: #fff;
+  margin: .1em .5em;
+  cursor: pointer;
+}
+
+h2 {
+  color: #0AF;
+  margin: 0;
+}
 
 @media (max-width: 800px) {
   h1 span {
@@ -49,4 +68,8 @@ h1 img {
 .ol-control button {
   box-shadow: inset 0 0 5px #0AF;
   border: 2px solid #0AF;
+}
+
+.ol-ext-dialog > form .ol-buttons input {
+  color: #0AF;
 }

@@ -12,8 +12,12 @@ import { click } from 'ol/events/condition'
 
 import map from '../common/map.js'
 import styleFn from './styleFn.js'
+import setInfo from '../common/setInfo.js'
 
+import info from './page-info.html'
 import './index.css'
+
+setInfo(info)
 
 const backLayer = new Geoportail({ layer: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2' })
 backLayer.addFilter(new ColorFilter({
