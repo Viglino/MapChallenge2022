@@ -9,12 +9,13 @@ import map from '../common/map.js'
 import setInfo from '../common/setInfo.js'
 
 import info from './page-info.html'
-import './index.css'
 import { unByKey } from 'ol/Observable.js'
 import ol_ext_Ajax from 'ol-ext/util/Ajax.js'
 import ol_interaction_Hover from 'ol-ext/interaction/Hover.js'
 import Feature from 'ol/Feature'
-import { LineString } from 'ol/geom.js'
+import LineString from 'ol/geom/LineString'
+
+import './index.css'
 
 setInfo(info)
 
