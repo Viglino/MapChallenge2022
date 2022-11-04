@@ -24,6 +24,10 @@ h1 svg {
   width: 2.2em;
   vertical-align: text-top;
 }
+h1 img {
+  height: 1em;
+  vertical-align: text-top;
+}
 
 @media (max-width: 800px) {
   h1 span {
