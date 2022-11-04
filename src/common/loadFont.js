@@ -5,8 +5,8 @@
 import WebFont from 'webfontloader';
 
 /* Import fonts */
-import './fonts/fontmaki.css'
-import './fonts/fontmaki2.css'
+import '../fonts/fontmaki.css'
+import '../fonts/fontmaki2.css'
   
 /** Load fonts before
  * @param {function|undefined} onLoadFn function called when a font is loaded

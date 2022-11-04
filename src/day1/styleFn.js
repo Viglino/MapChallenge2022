@@ -2,7 +2,7 @@ import defaultStyle from 'ol-ext/style/defaultStyle'
 
 import Style from 'ol/style/Style'
 import FontSymbol from 'ol-ext/style/FontSymbol'
-import loadFonts from '../loadFont'
+import loadFonts from '../common/loadFont'
 import Stroke from 'ol/style/Stroke'
 import Fill from 'ol/style/Fill'
 

@@ -5,14 +5,15 @@ import VectorTileSource from 'ol/source/VectorTile'
 import MVTFormat from 'ol/format/MVT'
 import Feature from 'ol/Feature'
 import TileWFS from 'ol-ext/source/TileWFS'
+import ColorFilter from 'ol-ext/filter/Colorize'
 
 import Select from 'ol/interaction/Select'
 import { click } from 'ol/events/condition'
 
-import map from '../map.js'
+import map from '../common/map.js'
 import styleFn from './styleFn.js'
 
-import ColorFilter from 'ol-ext/filter/Colorize'
+import './index.css'
 
 const backLayer = new Geoportail({ layer: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2' })
 backLayer.addFilter(new ColorFilter({
@@ -44,7 +45,7 @@ const layer = new VectorLayer({
 })
 /*/
 map.getView().setMinZoom(16)
-map.getView().setCenter([637200, 5650818])
+map.getView().setCenter([636860, 5651388])
 map.addLayer(layer)
 
 loadFonts(() => {
@@ -67,8 +68,8 @@ map.addInteraction(select);
 // Hover interaction
 import Hover from 'ol-ext/interaction/Hover'
 import Popup from 'ol-ext/overlay/Popup'
-import loadFonts from '../loadFont.js'
-import VectorLayer from 'ol/layer/Vector.js'
+import loadFonts from '../common/loadFont.js'
+
 const popup = new Popup({
   positioning: 'bottom-center'
 })

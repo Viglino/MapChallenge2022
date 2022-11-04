@@ -2,11 +2,11 @@
   "name": "mapchallenge2022",
   "version": "1.0.0",
   "description": "My #30DayMapChange 2022",
-  "main": "index.js",
+  "source": "./index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel --dist-dir ./.dist index.html",
-    "build": "parcel build --dist-dir ./docs ./index.html --public-url ./ --no-source-maps"
+    "start": "parcel --dist-dir ./.dist ./src/index.html",
+    "build": "parcel build --dist-dir ./docs ./src/index.html --public-url ./ --no-source-maps"
   },
   "repository": {
     "type": "git",

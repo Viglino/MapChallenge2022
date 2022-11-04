@@ -1,0 +1,28 @@
+h2 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #F70;
+  text-shadow: 
+    2px 2px 2px #0af,
+    2px -2px 2px #0af,
+    -2px -2px 2px #0af,
+    -2px 2px 2px #0af;
+  position: fixed;
+  top: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.ol-popup.default > div {
+  border: 3px solid #0af;
+  box-shadow: inset 0 0 5px #0af;
+}
+.ol-popup.default .anchor {
+  color: #0af;
+}
+.ol-popup.default .anchor:after {
+  border-width: 9px;
+  border-color: #3bf transparent;
+  margin: 5px -9px;
+}
