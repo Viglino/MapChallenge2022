@@ -1,0 +1,61 @@
+h2 {
+  position: fixed;
+  font-size: 3em;
+  top: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgba(255,255,255,.5);
+  padding: 0 .5em;
+}
+.info {
+  position: fixed;
+  bottom: 3em;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(255,255,255,.5);
+  padding: .5em;
+}
+
+.ol-control button {
+  box-shadow: unset;
+  border: 0;
+}
+
+.ol-attribution.ol-uncollapsible {
+  bottom: 3em;
+}
+.ol-control.ol-timeline {
+  font-size: 2em;
+}
+.ol-timeline .ol-scroll {
+  height: 1.5em;
+}
+.ol-timeline .ol-scroll .ol-features {
+  font-size: .5em;
+}
+.ol-timeline .ol-scroll .ol-feature {
+  text-align: center;
+  padding: 0;
+}
+
+button.go:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: .8em;
+  background: transparent;
+  border: 0.4em solid transparent;
+  border-right: 0;
+  border-left: .6em solid currentColor;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+.running button.go:before {
+  background: transparent;
+  width: .2em;
+  border: 0;
+  box-shadow: .2em 0, -.2em 0;
+}
