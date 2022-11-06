@@ -1,0 +1,70 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+h2.title strike {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+h2.title strike:before,
+h2.title strike:after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  top: calc(50% - 3px);
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  background-color: currentColor;
+  box-shadow: 2px 3px currentColor;
+  opacity: .8;
+}
+h2.title strike:after {
+  transform: translate(-50%, -50%) rotate(-1deg);
+  left: calc(50% - 3px);
+  box-shadow: 2px 3px currentColor;
+}
+
+.ol-control button {
+  box-shadow: unset;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  background-color: #f5f5f5;
+  color: #888;
+  text-shadow: 1px 1px #fff;
+}
+.ol-control button span {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  color: #999;
+}
+.ol-control button span:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3), inset 1px 1px 3px 1px rgba(255,255,255,.3);
+}
+.ol-control button:hover, .ol-control button:focus {
+  outline: none;
+}
