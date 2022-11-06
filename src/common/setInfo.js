@@ -17,8 +17,8 @@ export default function(info) {
 <p class="social">
   <a class="twitter-share-button" 
     href="https://twitter.com/intent/tweet" 
-    data-url="` + document.location.href + `"
-    data-text="Awesome extensions for #Openlayers @jmviglino">
+    data-url="` + document.location.origin + document.location.pathname + `"
+    data-text="` + document.title.replace(/#30/, '#30DayMapChallenge') + ` #olext #Openlayers @jmviglino\n">
     Tweet
   </a>
   <a href="https://mobile.twitter.com/jmviglino" target="_new">
