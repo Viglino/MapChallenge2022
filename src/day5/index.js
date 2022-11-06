@@ -23,16 +23,19 @@ map.addLayer(backLayer)
 map.getView().setZoom(6)
 map.getView().setCenter([3503920, 6228683])
 
-
 let date = 1922;
-const fill = new Style({
-  fill: new Fill({ color: '#fa0' })
+const fillYellow = new Style({
+  fill: new Fill({ color: '#FFDD00' })
+})
+const fillBlue = new Style({
+  fill: new Fill({ color: '#0057B7' })
 })
 // Style
 function styleFn(feature) {
   if (feature.get('before') && date >= feature.get('before')) return [];
   if (feature.get('after') && date < feature.get('after')) return [];
-  return fill;
+  if (feature.get('before') || feature.get('after')) return fillBlue
+  return fillYellow
 }
 
 const ukr = new VectorLayer ({
@@ -52,28 +55,28 @@ ukr.addFilter(new CSSFilter({ blend: 'multiply' }));
 function setDate(d) {
   date = d;
   document.body.querySelector('h2').innerText = d;
-  document.body.querySelector('.info').innerText = dateInfo[d] || '';
+  document.body.querySelector('.info').innerHTML = dateInfo[d] || '';
   ukr.getSource().changed();
 }
 
 const dates = [{
     date: 1922,
-    info: `En 1922, la République socialiste soviétique d'Ukraine, est créée par la Russie soviétique en réunissant l'Ukraine de l'Ouest et l'Ukraine du Sud-Est.`
+    info: `En <b>1922</b>, la République socialiste soviétique d'Ukraine, est créée par la Russie soviétique en réunissant l'Ukraine de l'Ouest et l'Ukraine du Sud-Est.`
   }, {
     date: 1924,
     info: ``
   }, {
     date: 1939,
-    info: `En 1939, l'URSS accorde à l'Ukraine un territoire pris sur la Pologne : la Volynie et la Galicie`
+    info: `En <b>1939</b>, l'URSS accorde à l'Ukraine un territoire pris sur la Pologne : la Volynie et la Galicie`
   }, {
     date: 1940,
-    info: `En 1940, on y ajouta la Bucovine (Tchernivtsi) et le Boudjak (sud-ouest d'Odessa), deux territoires «cédés» par la Roumanie`
+    info: `En <b>1940</b>, on y ajouta la Bucovine (Tchernivtsi) et le Boudjak (sud-ouest d'Odessa), deux territoires «cédés» par la Roumanie`
   }, {
     date: 1945,
-    info: `L'URSS transfére en 1945 un territoire pris sur la Tchécoslovaquie à l'Ukraine: la Ruthénie (Transcarpathie). En 1948, l'URSS annexe l'île roumaine des Serpents ("Ostrov Zmeïnyi")`
+    info: `L'URSS transfére en <b>1945</b> un territoire pris sur la Tchécoslovaquie à l'Ukraine: la Ruthénie (Transcarpathie). En 1948, l'URSS annexe l'île roumaine des Serpents ("Ostrov Zmeïnyi")`
   }, {
     date: 1954,
-    info: `En 1954, le président Nikita Khrouchtchev donna la Crimée (qui sera annexée à la Russie en 2014) à l'Ukraine, officiellement pour commémorer la réunification de la Russie et de l’Ukraine.`
+    info: `En <b>1954</b>, le président Nikita Khrouchtchev donna la Crimée (qui sera annexée à la Russie en 2014) à l'Ukraine, officiellement pour commémorer la réunification de la Russie et de l’Ukraine.`
   }
 ]
 
@@ -87,6 +90,11 @@ dates.forEach((d,i) => {
     endDate: new Date(d.date + '/12/31')
   }
 })
+let curInfo = ''
+for (let i=1919; i<1964; i++) {
+  if (!dateInfo[i]) dateInfo[i] = curInfo
+  else curInfo = dateInfo[i];
+}
 
 // Create Timeline control 
 let tline = new Timeline({

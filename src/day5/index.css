@@ -1,4 +1,4 @@
-h2 {
+body > h2 {
   position: fixed;
   font-size: 3em;
   top: 1em;
@@ -7,14 +7,22 @@ h2 {
   z-index: 1;
   background-color: rgba(255,255,255,.5);
   padding: 0 .5em;
+  color: #0057B7;
 }
 .info {
   position: fixed;
   bottom: 3em;
   left: 0;
   z-index: 1;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.6 );
   padding: .5em;
+  width: 50%;
+  max-width: 25em;
+  min-width: 15em;
+}
+.info b {
+  color: #0057B7;
+  font-size: 1.1em;
 }
 
 .ol-control button {
