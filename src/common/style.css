@@ -73,3 +73,6 @@ h2 {
 .ol-ext-dialog > form .ol-buttons input {
   color: #0AF;
 }
+.ol-ext-dialog .ol-content {
+  width: 40em;
+}

@@ -16,6 +16,8 @@ import { popStart, popEnd } from './placemark.js'
 const notif = new ol_control_Notification()
 map.addControl(notif)
 
+notif.show('Clik two points on the map...', 1E10)
+
 const graph = new VectorSource({
   url: 'https://viglino.github.io/ol-ext/examples/data/ROUTE120.geojson',
   format: new GeoJSON()
@@ -91,7 +93,7 @@ dijkstra.on('pause', function(e) {
 
 // Start processing
 dijkstra.on('start', function(e) {
-  notif.show('Calculating...', Infinity)
+  notif.show('Calculating...', 1E10)
   result.clear();
 });
 // Finish > show the route
