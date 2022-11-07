@@ -20,12 +20,15 @@ const map = new Map({
     parent: document.body
   })
 })
+
+const permalink = new Permalink({ visible: false })
 setTimeout(() => {
-  map.addControl(new Permalink({ visible: false }))
+  map.addControl(permalink)
 })
 
 /* DEBUG */
 window.map = map
 /**/
 
+export { permalink }
 export default map

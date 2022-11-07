@@ -1,0 +1,28 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px rgba(255,255,255,.6),
+    2px -2px 2px rgba(255,255,255,.6),
+    -2px -2px 2px rgba(255,255,255,.6),
+    -2px 2px 2px rgba(255,255,255,.6);
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+.map .ol-popup.default > div {
+  border: 3px solid #0af;
+  box-shadow: inset 0 0 5px #0af;
+}
+.map .ol-popup.default .anchor {
+  color: #0af;
+}
+.map .ol-popup.default .anchor:after {
+  border-width: 9px;
+  border-color: #3bf transparent;
+  margin: 5px -9px;
+}
