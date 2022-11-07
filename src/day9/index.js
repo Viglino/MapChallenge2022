@@ -82,6 +82,7 @@ triangle.getSource().on('addfeature', function(e) {
   }));
 });
 
+let nb = 1
 function addFeature() {
   const ext = map.getView().calculateExtent()
   const pt = [
@@ -91,11 +92,16 @@ function addFeature() {
   const f = new Feature(new Point(pt))
   // 
   nodes.addFeature(f);
-  map.getView().animate({
-    center: pt,
-    zoom: Math.min(18, Math.max(14, map.getView().getZoom() + Math.random() - .5))
-  })
-  setTimeout(addFeature, Math.random()*2000 + 3000)
+  console.log(nb)
+  if (++nb > 3) {
+    map.getView().animate({
+      center: pt,
+      zoom: Math.min(18, Math.max(14, map.getView().getZoom() + Math.random() - .5))
+    })
+    setTimeout(addFeature, Math.random()*2000 + 2000)
+  } else  {
+    setTimeout(addFeature, 500)
+  }
 }
 
 setTimeout(addFeature, 500)
