@@ -1,0 +1,12 @@
+h1 {
+  color: #b00;
+} 
+h2, a, a:hover, 
+.ol-ext-dialog > form .ol-buttons input {
+  color: #a00;
+}
+
+h2.title {
+  color: #b00;
+  text-shadow: 2px 2px 2px #fcc, 2px -2px 2px #fcc, -2px -2px 2px #fcc, -2px 2px 2px #fcc;
+}

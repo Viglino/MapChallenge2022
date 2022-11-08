@@ -1,0 +1,15 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
