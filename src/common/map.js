@@ -6,6 +6,7 @@ import Map from 'ol/Map'
 import View from 'ol/View'
 import ol_ext_element from 'ol-ext/util/element'
 import Permalink from 'ol-ext/control/Permalink'
+import ScaleLine from 'ol-ext/control/CanvasScaleLine'
 
 import './style.css'
 
@@ -25,6 +26,8 @@ const permalink = new Permalink({ visible: false })
 setTimeout(() => {
   map.addControl(permalink)
 })
+
+map.addControl(new ScaleLine)
 
 /* DEBUG */
 window.map = map
