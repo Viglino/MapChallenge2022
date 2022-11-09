@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.7.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.7.0",
     "parcel-reporter-static-files-copy": "^1.4.0"
   },

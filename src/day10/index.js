@@ -13,6 +13,9 @@ import Fill from 'ol/style/fill.js'
 import Style from 'ol/style/style.js'
 import PaperFilter from 'ol-ext/util/SVGFilter/Paper'
 import CanvasFilter from 'ol-ext/filter/SVGFilter'
+import Select from 'ol/interaction/Select'
+import Hover from 'ol-ext/interaction/Hover'
+import { click } from 'ol/events/condition'
 
 import scribbleFill from 'ol-ext/geom/Scribble'
 
@@ -100,10 +103,6 @@ var paperFilter = new PaperFilter({ scale : 2, light: 60 });
 filter.addSVGFilter(paperFilter);
 vector.addFilter(filter);
 
-
-import Select from 'ol/interaction/Select'
-import Hover from 'ol-ext/interaction/Hover'
-import { click } from 'ol/events/condition'
 // Hover interaction with cursor fill
 map.addInteraction(new Hover({
   cursor: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAihJREFUWEftlr/LEnEcx193KTQ89JQEDSKELi03BIbQ1uKQptAQYqtbQtDUIBHV2BCIgejk4B8guuhSBs8YYUGoCEa2nSbR8JCHxsfnDtSyu+qo5b7LHXfv7+f9+r6/P+4UnLUacAk4B2jAsbNu9irFXrJWjIE4cNfU33HYz1ZmB6ACOeAxcAE4DbwD7gEN2+oOBPsAXgHPgPM+n++5YRgCkgRaQB0YAA8d1LeV7AIcAq+BsKIoH0Oh0KGmaWfC4TDFYlGKCcQVs6rrAE+A+4CqqurnWCymNhqNs9FolHa7zXA4JJkU/3UCQzcTkFEfmascRVGWmUzmuF6vHwwGA+LxOOOxrEFotVqbELdt83UgkCkwTN0pueZyuVWlUllPTbVapdvtUqvJLjxpGxDWmnBgs18iRivrdSAQYDqdbqlHoxGRSGTrmZsQWwCaptHr9RyNyC2ILQBxbjabJBKJfwaxC/BWjlqnEOVymXw+/80wjJvmGeEIfFO0C/ACeHoSxK+TKBQKq1Kp9Gk+n98A3vy2s9lBAJaAdSAJwDVA5mAvRDab/drpdN7run4d0P/UXPqJ8UvgKuADLAB59wOEruukUql5v9/vzGazW39jbPW1Ri57L7ADsAURDAZJp9NfJpNJcblcFtwwtxKQ62XzG/ABuLhTfJ2E3+83FotFHii7Zb4JIPePgAd7ilv7Ur6Grja7/wFXzX5WzAPwEvAS8BLwEvAS+O8JfAcOZLAhCzd6QAAAAABJRU5ErkJggg==") 0 13, auto'

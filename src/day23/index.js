@@ -25,3 +25,4 @@ import Blob from 'ol-ext/interaction/Blob'
 // Blob interaction
 const blob = new Blob({ radius: 80, layers: plan });
 map.addInteraction(blob);
+blob.setPosition(map.getView().getCenter())

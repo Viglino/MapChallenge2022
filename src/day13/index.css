@@ -1,0 +1,25 @@
+.ol-control button {
+  border: 0;
+  box-shadow: unset;
+}
+
+.ol-control.ol-layerswitcher button {
+  background-color: #333;
+}
+
+.ol-layerswitcher-image > button:before, .ol-layerswitcher > button:before {
+  background: transparent;
+  box-shadow: 0.1em 0.1em #fff;
+}
+.ol-layerswitcher-image > button:after, .ol-layerswitcher > button:after {
+  background: #08F;
+  top: 0.22em;
+  left: 0.34em;
+}
+
+.ol-attribution {
+  display: none;
+}
+.ol-attribution.ol-canvas-control {
+  display: block;
+}
