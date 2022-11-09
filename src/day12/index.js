@@ -50,17 +50,16 @@ map.addLayer(road)
 
 
 geoimg.getSource().getPolygon = function() {
-  var source = this;
-  var center = source.getCenter();
-  var scale = source.getScale();
-  var width = source.getGeoImage().width * scale[0];
-  var height = source.getGeoImage().height * scale[1];
+  var center = this.getCenter();
+  var scale = this.getScale();
+  var width = this.getGeoImage().width * scale[0];
+  var height = this.getGeoImage().height * scale[1];
   var p1 = [center[0] - width / 2, center[1] - height / 2];
   var p2 = [center[0] + width / 2, center[1] + height / 2];
   var extent = boundingExtent([p1, p2]);
   var polygon = fromExtent(extent);
   // The resulting polygon
-  polygon.rotate(-source.getRotation(), center);
+  polygon.rotate(-this.getRotation(), center);
   return polygon;
 }
 
@@ -76,6 +75,10 @@ map.addLayer(vector)
 
 const poly = new Feature(geoimg.getSource().getPolygon())
 vector.getSource().addFeature(poly)
+geoimg.getSource().getGeoImage().addEventListener('load', () => {
+  const p = new Feature(geoimg.getSource().getPolygon())
+  poly.setGeometry(p.getGeometry())
+})
 
 const transform = new Transform({
   selection: false,
@@ -90,7 +93,6 @@ transform.on('rotatestart', e => {
   angle = geoimg.getSource().getRotation()
 })
 transform.on('rotating', e => {
-  console.log(e.angle)
   geoimg.getSource().setRotation(angle - e.angle)
 })
 
