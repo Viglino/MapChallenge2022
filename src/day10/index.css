@@ -12,6 +12,7 @@ h2.title {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  pointer-events: none;
 }
 
 .map {
