@@ -3,9 +3,21 @@
   box-shadow: unset;
 }
 
-.ol-control.ol-layerswitcher button {
+.ol-control button {
   background-color: #333;
+  color: #fff;
 }
+.ol-control button:hover {
+  color: #08f;
+}
+
+.ol-control.ol-print {
+  left: .5em;
+}
+.ol-control.ol-print button {
+  font-size: 1.7em;
+}
+
 
 .ol-layerswitcher-image > button:before, .ol-layerswitcher > button:before {
   background: transparent;

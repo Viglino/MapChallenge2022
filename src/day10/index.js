@@ -133,8 +133,10 @@ function doScribble() {
   const f = map.getFeaturesAtPixel(map.getPixelFromCoordinate(pt)).pop();
   if (f) {
     scribbleStyle(f, map.getView().getResolution())
+    tout = setTimeout(doScribble, Math.random()*2000 + 500)
+  } else {
+    tout = setTimeout(doScribble)
   }
-  tout = setTimeout(doScribble, Math.random()*2000 + 500)
 }
 // Cancel next scribble and start a new one
 function cancelScribble() {
