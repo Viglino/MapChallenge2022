@@ -27,6 +27,7 @@ if (!multip.prototype.scribbleFill) multip.prototype.scribbleFill = multipjs.pro
 
 setInfo(info)
 
+/* Calculate scribble style */
 function scribbleStyle(feature, resolution) {
   //const colors = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
   const colors = [[31,119,180],[174,199,232],[255,127,14],[255,187,120],[44,160,44],[152,223,138],[214,39,40],[255,152,150],[148,103,189],[197,176,213],[140,86,75],[196,156,148],[227,119,194],[247,182,210],[127,127,127],[199,199,199],[188,189,34],[219,219,141],[23,190,207],[158,218,229]];
@@ -117,6 +118,27 @@ map.addInteraction(select)
 select.on('select', e => {
   e.selected.forEach(feature => {
     scribbleStyle(feature, map.getView().getResolution())
+    cancelScribble()
   });
   select.getFeatures().clear();
 })
+
+// Auto scribble
+function doScribble() {
+  const ext = map.getView().calculateExtent()
+  const pt = [
+    (ext[0] + ext[2]) / 2 + (Math.random() - 0.5) * (ext[2] - ext[0]) / 2 ,
+    (ext[1] + ext[3]) / 2 + (Math.random() - 0.5) * (ext[3] - ext[1]) / 2 ,
+  ]
+  const f = map.getFeaturesAtPixel(map.getPixelFromCoordinate(pt)).pop();
+  if (f) {
+    scribbleStyle(f, map.getView().getResolution())
+  }
+  tout = setTimeout(doScribble, Math.random()*2000 + 500)
+}
+// Cancel next scribble and start a new one
+function cancelScribble() {
+  clearTimeout(tout)
+  tout = setTimeout(doScribble, Math.random()*2000 + 3000)
+}
+let tout = setTimeout(doScribble, 1000)

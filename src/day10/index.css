@@ -14,7 +14,3 @@ h2.title {
   z-index: 1;
   pointer-events: none;
 }
-
-.map {
-  background-color: #ccc;
-}
