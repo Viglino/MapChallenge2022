@@ -3,12 +3,18 @@ import ol_ext_element from 'ol-ext/util/element.js'
 import map from './map'
 import './style.css'
 
+// Add current logo
+const svg = document.querySelector('h1 svg')
+if (svg) svg.innerHTML = '<use xlink:href="./logo.svg#logo" />'
+
+// Add twitter
 const head = document.getElementsByTagName("head")[0] || document.documentElement;
 const script = document.createElement("script");
 script.type = "text/javascript";
 script.src = "https://platform.twitter.com/widgets.js"
 head.appendChild(script);
 
+// Dialog info
 const dlog = new Dialog({ fullscreen: true });
 map.addControl(dlog)
 
@@ -38,7 +44,6 @@ export default function(info) {
 </p>
 `
   document.querySelector('h1').appendChild(ol_ext_element.create('I', {
-    html: 'i',
     click: () => {
       dlog.show({
         content: info,

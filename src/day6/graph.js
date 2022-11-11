@@ -16,7 +16,7 @@ import { popStart, popEnd } from './placemark.js'
 const notif = new ol_control_Notification()
 map.addControl(notif)
 
-notif.show('Clik two points on the map...', 1E10)
+notif.show('Click two points on the map...', 1E10)
 
 const graph = new VectorSource({
   url: 'https://viglino.github.io/ol-ext/examples/data/ROUTE120.geojson',

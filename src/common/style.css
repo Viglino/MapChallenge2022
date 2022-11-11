@@ -37,15 +37,23 @@ h1 i {
   line-height: 1.2em;
   text-align: center;
   border-radius: 50%;
-  background-color: #0AF;
-  color: #fff;
+  background-color: currentColor;
   margin: .1em .5em;
   cursor: pointer;
 }
+h1 i:before {
+  content: "i";
+  color: #fff;
+}
+
 
 h2 {
   color: #0AF;
   margin: 0;
+}
+h2.title {
+  text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 800px) {
