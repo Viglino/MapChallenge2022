@@ -17,7 +17,14 @@
 .ol-control.ol-print button {
   font-size: 1.7em;
 }
-
+@media print {
+  body.ol-print-document > .ol-ext-print-dialog .ol-content {
+    max-height: unset!important;
+    max-width: unset!important;
+    width: unset!important;
+    height: unset!important;
+  }
+}
 
 .ol-layerswitcher-image > button:before, .ol-layerswitcher > button:before {
   background: transparent;
