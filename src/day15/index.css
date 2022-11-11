@@ -1,0 +1,55 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #500;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.ol-layers .AOC {
+  mix-blend-mode: multiply;
+}
+
+.ol-control.ol-progress-bar > .ol-bar {
+  background-color: rgba(128,0,0,.7 );
+}
+.ol-viewport .ol-control.ol-progress-bar > .ol-waiting {
+  background-color: rgba(128,0,0,.7);
+  padding: .25em 1em;
+  border-radius: .3em;
+}
+
+.ol-popup-content .img {
+  background-image: url(https://cdn.pixabay.com/photo/2014/12/02/03/11/grapes-553462_960_720.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 80px;
+}
+
+.map .ol-popup.default > div {
+  border: 3px solid #800;
+  box-shadow: 
+    inset 0 0 5px #a00,
+    2px 2px 4px 3px rgba(0,0,0,.5);
+  background: #a55;
+  color: #ecc;
+}
+.map .ol-popup.default .anchor:after {
+  border-color: #a00 #0000;
+}
+.map .ol-popup.default .anchor {
+  color: #800;
+}
+.map .ol-popup b {
+  display: block;
+  margin: .5em 0 .25em;
+}
