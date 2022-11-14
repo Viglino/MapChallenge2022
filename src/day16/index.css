@@ -1,0 +1,8 @@
+.ol-control button {
+  border: 0;
+}
+.ol-control.ol-legend,
+.ol-control.ol-legend:hover {
+  background-color: #fff;
+  bottom: 2em
+}
