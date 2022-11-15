@@ -27,11 +27,12 @@ setTimeout(() => {
   map.addControl(permalink)
 })
 
-map.addControl(new ScaleLine)
+const scale = new ScaleLine
+map.addControl(scale)
 
 /* DEBUG */
 window.map = map
 /**/
 
-export { permalink }
+export { permalink, scale }
 export default map

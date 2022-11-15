@@ -1,0 +1,52 @@
+h2.title {
+  position: fixed;
+  top: .4em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+img.banner {
+  width: min(4.5em, 80%);
+  height: auto;
+}
+
+.ol-compassctrl {
+  top: 50%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.ol-compassctrl.right {
+  top: auto;
+  left: auto;
+  bottom: max(3em, 5%);
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: none;
+  transform: none;
+}
+
+img.roll {
+  position: fixed;
+  z-index: 1;
+  top: 3em;
+  width: max(2em, 3%);
+  height: calc(100% - 3em);
+}
+img.roll2 {
+  right: 0;
+  width: max(2em, 4%);
+}
+
+.map {
+  left: 1%;
+  right: 1%;
+}
+
+.ol-scale-line {
+  left: 3.5em;
+  bottom: 3.5em;
+}

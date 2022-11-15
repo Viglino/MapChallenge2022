@@ -1,0 +1,31 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.ol-control.ol-globe {
+  background-color: #fff;
+  opacity: 1;
+  bottom: 2.5em;
+  box-shadow: 10px 40px 20px -15px rgba(0,0,0,.5);
+  transform: unset;
+}
+.ol-control.ol-globe .panel{
+  width: 100px;
+  height: 100px;
+}
+
+.ol-control.ol-globe .ol-pointer,
+.ol-control.ol-globe .panel:before {
+  pointer-events: none;
+}

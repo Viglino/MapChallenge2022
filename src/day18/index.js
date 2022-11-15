@@ -15,7 +15,7 @@ setInfo(info)
 map.getView().setZoom(12)
 map.getView().setCenter([-94031, 5761698])
 
-/**/
+/** /
 const backLayer = new ol_layer_Geoportail({ 
   className: 'back',
   layer: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2',
