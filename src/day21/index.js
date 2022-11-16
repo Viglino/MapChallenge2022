@@ -13,6 +13,7 @@ import info from './page-info.html'
 
 import './index.css'
 import Style from 'ol/style/Style.js'
+
 setInfo(info)
 
 map.getView().setZoom(6)
@@ -33,7 +34,6 @@ function getStyle(pop) {
     if (d < .25) {
       // Blue > yellow
       d *= 4
-      console.log(d)
       styleCache[pop] = new Style({
         fill: new Fill({ color: [
           180 * (1-d) + 255 * d,
