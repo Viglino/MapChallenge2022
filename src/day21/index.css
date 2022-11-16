@@ -1,0 +1,46 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+body .loading p {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font-size: min(5em, 9vw);
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+body .loading {
+  content: "";
+  position: fixed;
+  display: none;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(255,255,255,.65);
+}
+
+body.loading .loading {
+  display: block;
+}
+
+.ol-layers .ol-layer {
+  filter: grayscale(1);
+}
+.ol-layers .bin,
+.ol-layers .kontur {
+  mix-blend-mode: multiply;
+}
