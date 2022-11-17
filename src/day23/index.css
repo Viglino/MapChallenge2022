@@ -1,0 +1,83 @@
+h2.title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  color: #666;
+  text-shadow: 
+    2px 2px 2px #fff,
+    2px -2px 2px #fff,
+    -2px -2px 2px #fff,
+    -2px 2px 2px #fff;
+  position: fixed;
+  top: .7em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.map {
+  pointer-events: none;
+}
+
+.ol-animated-overlay {
+  opacity: .8!important;
+}
+
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.bar button {
+  display: block;
+  margin: .25em auto;
+  padding: .25em 1em;
+  background-color: #333;
+  color: #0af;
+  cursor: pointer;
+  font-weight: bold;
+}
+.bar div {
+  position: relative;
+  display: inline-block;
+  padding: .1em;
+  width: 1.4em;
+  height: 1.4em;
+  background-color: #333;
+  border-radius: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.bar div:before {
+  content: "";
+  border: .7em solid transparent;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.bar .up {
+  position: absolute;
+  bottom: 3.5em;
+}
+.bar .up:before {
+  border-top: 0;
+  border-bottom: 1em solid #0af;
+}
+.bar .down:before {
+  border-bottom: 0;
+  border-top: 1em solid #0af;
+}
+.bar .left:before {
+  border-left: 0;
+  border-right: 1em solid #0af;
+}
+.bar .right:before {
+  border-right: 0;
+  border-left: 1em solid #0af;
+}
