@@ -28,6 +28,8 @@ h2.title {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  font-size: 1.3em;
+  text-align: center;
 }
 
 .bar button {
@@ -38,6 +40,7 @@ h2.title {
   color: #0af;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1em;
 }
 .bar div {
   position: relative;
@@ -49,6 +52,7 @@ h2.title {
   border-radius: 5px;
   vertical-align: middle;
   cursor: pointer;
+  margin: .05em .1em;
 }
 .bar div:before {
   content: "";
@@ -63,7 +67,7 @@ h2.title {
 }
 .bar .up {
   position: absolute;
-  bottom: 3.5em;
+  bottom: 4.1em;
 }
 .bar .up:before {
   border-top: 0;

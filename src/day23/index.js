@@ -80,6 +80,9 @@ game.on ("render", function(e) {
   }
   plane.getGeometry().setCoordinates(center);
   plane.getStyle()[0].getImage().setRotation(a + Math.PI/2);
+  plane.getStyle()[0].getImage().setScale(
+    .5 + .02 * map.getView().getResolution()
+  );
   plane.update(e);
   shadow.getGeometry().setCoordinates([
     center[0] + map.getView().getResolution() * 30, 
