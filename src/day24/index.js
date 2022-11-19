@@ -14,16 +14,17 @@ import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon'
 
 import map, { permalink } from '../common/map'
+import monuments from './monuments'
 
 import setInfo from '../common/setInfo'
 import info from './page-info.html'
 
-
 import './index.css'
+
 setInfo(info)
 permalink.setUrlReplace(false)
 
-map.getView().setZoom(13)
+map.getView().setZoom(14)
 map.getView().setCenter([260352, 6250845])
 map.getView().setMinZoom(13)
 map.getView().setMaxZoom(15)
@@ -89,34 +90,12 @@ orc.getStyle()[0].getText().setOffsetY(-75)
 caracter.getSource().addFeature(orc);
 
 // Monuments
-const monuments = {
-  eiffel_tower: {
-    position: [255450, 6250800],
-    displacement: [0,50],
-    scale: .5
-  },
-  triumph_arc: {
-    position: [255477, 6253464],
-    displacement: [0,20],
-    scale: .45
-  },
-  notre_dame: {
-    position: [261550, 6249946],
-    displacement: [0,30],
-    scale: .5
-  },
-  bastille: {
-    position: [263685, 6249999],
-    displacement: [0,30],
-    scale: .5
-  },
-}
 Object.keys(monuments).forEach(k => {
   const mnt = monuments[k];
   const f = new Feature(new Point(mnt.position));
   f.setStyle ( new Style({ 
     image: new Icon({ 
-      src: './monument/' + k + '.png', 
+      src: './monument/' + (mnt.icon || k) + '.png', 
       scale: mnt.scale, 
       displacement: mnt.displacement
     })
@@ -133,13 +112,21 @@ Where do you want to go?
 // setTimeout(function(){ popup.hide() }, 10000);
 
 // On click => change destination
-map.on ("click", function(e){
+let feature
+map.on ("click", function(e) {
+  feature = map.getFeaturesAtPixel(e.pixel).pop()
+  if (feature) {
+    image.src = feature.get('img')
+  } else {
+    image.src = ''
+  }
   orc.setDestination(e.coordinate, map.getView().getResolution()/7);
   orc.setState("walk_"+orc.getQuarter());
   popup.hide();
 });
 
 // Do something when arrived at destination
+const image = document.querySelector('img.photo')
 orc.on("destination", function() {
   orc.setState("idle");
 });
