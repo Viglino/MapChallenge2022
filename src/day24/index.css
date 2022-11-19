@@ -1,16 +1,41 @@
+body {
+  font-family: amarante;
+}
 h2.title {
-  font-family: 'Cabin Sketch', cursive;
+  font-family: 'amarante', cursive;
   font-size: 5em;
-  color: #666;
+  color: #944;
   text-shadow: 
     2px 2px 2px #fff,
     2px -2px 2px #fff,
     -2px -2px 2px #fff,
     -2px 2px 2px #fff;
   position: fixed;
-  top: .7em;
+  top: .1em;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleX(.8);
   z-index: 1;
+  width: auto;
+  padding-top: .25em;
+}
+h2.title::first-letter {
+  font-size: 2em;
+  float: left;
+  margin-top: -.25em;
+  margin-right: -.1em;
+  font-weight: lighter;
 }
 
+.ol-popup-content {
+  font-size: 1.2em;
+}
+.ol-popup-content::first-letter {
+  font-size: 2em; 
+  line-height: .9em;
+  padding-right: .1em;
+/*
+  float: left;
+  margin-top: -.3em;
+  padding-right: .1em;
+*/
+}

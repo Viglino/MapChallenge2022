@@ -25,6 +25,8 @@ permalink.setUrlReplace(false)
 
 map.getView().setZoom(13)
 map.getView().setCenter([260352, 6250845])
+map.getView().setMinZoom(13)
+map.getView().setMaxZoom(15)
 
 const game = new Game({
   map: map
@@ -87,9 +89,40 @@ orc.getStyle()[0].getText().setOffsetY(-75)
 caracter.getSource().addFeature(orc);
 
 // Monuments
-const eiffel = new Feature(new Point([255450, 6250700]));
-eiffel.setStyle ( new Style({ image: new Icon({ src: "./Eiffel_Tower.png", scale:0.45, displacement: [0,45] }) }) );
-caracter.getSource().addFeature(eiffel);
+const monuments = {
+  eiffel_tower: {
+    position: [255450, 6250800],
+    displacement: [0,50],
+    scale: .5
+  },
+  triumph_arc: {
+    position: [255477, 6253464],
+    displacement: [0,20],
+    scale: .45
+  },
+  notre_dame: {
+    position: [261550, 6249946],
+    displacement: [0,30],
+    scale: .5
+  },
+  bastille: {
+    position: [263685, 6249999],
+    displacement: [0,30],
+    scale: .5
+  },
+}
+Object.keys(monuments).forEach(k => {
+  const mnt = monuments[k];
+  const f = new Feature(new Point(mnt.position));
+  f.setStyle ( new Style({ 
+    image: new Icon({ 
+      src: './monument/' + k + '.png', 
+      scale: mnt.scale, 
+      displacement: mnt.displacement
+    })
+  }));
+  caracter.getSource().addFeature(f);
+})
 
 // Show popup then hide
 popup.show(orc.getCoordinate(), `
@@ -97,7 +130,7 @@ Hello, I'm Orky!<br/>
 Let's visit Paris 1900!<br/>
 Where do you want to go?
 `);
-setTimeout(function(){ popup.hide() }, 10000);
+// setTimeout(function(){ popup.hide() }, 10000);
 
 // On click => change destination
 map.on ("click", function(e){
