@@ -113,22 +113,27 @@ Where do you want to go?
 
 // On click => change destination
 let feature
+const image = document.querySelector('.photo')
 map.on ("click", function(e) {
   feature = map.getFeaturesAtPixel(e.pixel).pop()
+  image.dataset.position = e.pixel[0] > window.innerWidth /2 ? 'left' : 'right'
   if (feature) {
-    image.src = feature.get('img')
-  } else {
-    image.src = ''
+    image.querySelector('img').src = feature.get('img')
+    image.querySelector('h3').innerText = feature.get('title')
+    image.querySelector('p').innerHTML = feature.get('description') + '<br/>&copy; ' +feature.get('copy');
   }
+  delete image.dataset.visible
   orc.setDestination(e.coordinate, map.getView().getResolution()/7);
   orc.setState("walk_"+orc.getQuarter());
   popup.hide();
 });
 
 // Do something when arrived at destination
-const image = document.querySelector('img.photo')
 orc.on("destination", function() {
   orc.setState("idle");
+  if (feature) {
+    image.dataset.visible = 1
+  }
 });
 
 // Game loop
