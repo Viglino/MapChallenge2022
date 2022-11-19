@@ -81,7 +81,7 @@ map.addLayer(caracter);
 // Add orc sprite
 const orc = new Sprite({
   name: 'Orky',
-  position: map.getView().getCenter(),
+  position: [260352, 6251083],
   src: 'https://viglino.github.io/ol-games/examples/data/orc.png',
   scale: 1.5
 });
@@ -115,7 +115,7 @@ Where do you want to go?
 let feature
 const image = document.querySelector('.photo')
 map.on ("click", function(e) {
-  feature = map.getFeaturesAtPixel(e.pixel).pop()
+  feature = map.getFeaturesAtPixel(e.pixel, { layerFilter: l => l===photo}).pop()
   image.dataset.position = e.pixel[0] > window.innerWidth /2 ? 'left' : 'right'
   if (feature) {
     image.querySelector('img').src = feature.get('img')
