@@ -48,14 +48,16 @@ const setElevation = function(val) {
     } else if (z > val - 3) {
       return [44, 126, 190, 255 * (val-z) / 3]
     } else {
-      return [44, 126, 190, 255]
+      return [170, 213, 233, 255]
     }
   }))
 }
-setElevation(120)
+setElevation(140)
+document.querySelector('h2 i').innerText = 140
 
 document.querySelector('input').addEventListener('change', e => {
   setElevation(parseInt(e.target.value))
+  document.querySelector('h2 i').innerText = e.target.value
 })
 
 /*

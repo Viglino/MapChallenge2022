@@ -106,4 +106,31 @@ const clip = new Clip({
   extent: [0,0,1,1]
 });
 backLayer.addFilter(clip);
-  
+
+// Easter egg
+import VectorLayer from 'ol/layer/Vector'
+import VectorSource from 'ol/source/Vector'
+import Feature from 'ol/Feature'
+import Point from 'ol/geom/Point'
+import Style from 'ol/style/Style'
+import Icon from 'ol/style/Icon'
+import ol_interaction_Hover from 'ol-ext/interaction/Hover.js'
+
+const vector = new VectorLayer({
+  source: new VectorSource,
+  style: new Style({
+    image: new Icon({
+      src: './pirate-poi.png',
+      scale: .7 
+    })
+  })
+})
+vector.getSource().addFeature(new Feature(new Point([-305211, 6051707])))
+map.addLayer(vector)
+
+map.addInteraction(new ol_interaction_Hover({ cursor: 'pointer' }))
+map.on('click', e => {
+  if (map.getFeaturesAtPixel(e.pixel).pop()) {
+    window.open('https://lannuaire.service-public.fr/bretagne/morbihan/ac2efa77-1ee1-4d77-9af1-eceecadfb641', '_new')
+  }
+})

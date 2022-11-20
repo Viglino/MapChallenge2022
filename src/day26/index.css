@@ -6,13 +6,16 @@ h2.title {
     -2px -2px 2px #fff,
     -2px 2px 2px #fff;
 }
-h2.title b {
+h2.title span {
   font-family: Quattrocento Sans, sans-serif;
   display: block;
   font-size: .4em;
   text-shadow: none;
   font-weight: normal;
   color: #028;
+}
+h2.title i {
+  font-style: normal;
 }
 .ol-control button {
   border: 0;
