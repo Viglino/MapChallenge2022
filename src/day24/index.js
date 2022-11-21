@@ -48,12 +48,24 @@ const layer = new Geoportail({
 map.addLayer(layer)
 
 // Photo layer
+const icons = ['diamond', 'flask', 'leaf', 'pix', 'scroll', 'statue']
 const photo = new VectorLayer ({ 
   source: new VectorSource({
     url: './paris-photo.geojson',
     format: new GeoJSON(),
     attributions: [ "<a href='https://twitter.com/search?q=paris%20autrefois%20%28from%3ASamuelMartin75%29&src=typed_query&f=live'>@SamuelMartin</a>" ],
-  })
+  }),
+  style: f => {
+    if (!f.getStyle()) {
+      f.setStyle(new Style({
+        image: new Icon({
+          src: './icon/' + icons[Math.trunc(Math.random() * icons.length)] + '.png'
+        })
+      }))
+    }
+    return f.getStyle();
+  },
+  renderOrder: (f1, f2) => f2.getGeometry().getFirstCoordinate()[1] - f1.getGeometry().getFirstCoordinate()[1]
 });
 map.addLayer(photo)
 
@@ -62,7 +74,7 @@ map.addInteraction(hover);
 
 // Popup overlay
 const popup = new Popup ({
-  popupClass: "black",
+  popupClass: "black anim",
   positioning: "bottom-left",
   offset: [0,-70],
   autoPan: false
@@ -104,11 +116,11 @@ Object.keys(monuments).forEach(k => {
 })
 
 // Show popup then hide
-popup.show(orc.getCoordinate(), `
+setTimeout(() => popup.show(orc.getCoordinate(), `
 Hello, I'm Orky!<br/>
 Let's visit Paris 1900!<br/>
 Where do you want to go?
-`);
+`), 1000);
 // setTimeout(function(){ popup.hide() }, 10000);
 
 // On click => change destination
@@ -133,6 +145,7 @@ orc.on("destination", function() {
   orc.setState("idle");
   if (feature) {
     image.dataset.visible = 1
+    photo.getSource().removeFeature(feature)
   }
 });
 
