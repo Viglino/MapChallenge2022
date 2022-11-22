@@ -1,0 +1,38 @@
+.map {
+  right: 20em;
+}
+
+.ol-gridreference {
+  position: fixed;
+  top: 3em;
+  right: 0;
+  width: 20em;
+  bottom: 0;
+}
+.ol-gridreference li.ol-title, .ol-gridreference li.ol-title:hover {
+  background-color: #0af;
+  text-transform: capitalize;
+}
+
+.ol-popup-content {
+  max-width: 30em;
+}
+.ol-popup-content img {
+  display: block;
+  max-height: 10em;
+  margin: auto;
+}
+.ol-popup-content p {
+  margin: 0;
+}
+.ol-popup-content .center {
+  text-align: center;
+  display: block;
+}
+
+.ol-popup.black > div {
+  background-color: rgba(0,0,0,.85);
+}
+.ol-popup.black .anchor {
+  color: rgba(0,0,0,.85);
+}
