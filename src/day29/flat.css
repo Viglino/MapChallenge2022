@@ -1,0 +1,91 @@
+body.flat {
+  position: fixed;
+  inset: 0;
+  background-image: url(https://img.freepik.com/photos-gratuite/plancher-bois-brun_53876-90802.jpg?w=2000);
+  background-size: cover;
+}
+.flat .map {
+  position: fixed;
+  inset: 0!important;
+  width: calc(100vh - 7em);
+  height: calc(100vh - 7em);
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #0a3b59;
+  background-color: #aad5e9;
+  border: 5px solid  #FCCD69;
+  box-shadow: 
+    8px 10px 12px 0 rgba(0,0,0,.5);
+}
+.flat .map:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  box-shadow: 
+    inset 3px 3px 3px rgba(0,0,0,.5), 
+    inset 0 0 1px 1px rgba(0,0,0,.5), 
+    inset 0 0 10px 10px rgba(255,255,255,.5),
+    inset -3px -3px 3px rgba(255,255,255,.5);
+  pointer-events: none;
+}
+
+.compass  {
+  position: fixed;
+  bottom: 3em;
+  right: 1em;
+  width: 15em;
+  height: 15em;
+  max-height: 20vw;
+  max-width: 20vw;
+  background-image: url(./compass.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  box-shadow: 1em 2em 2em rgba(0,0,0,.9);
+  overflow: hidden;
+}
+
+h2.etiquette {
+  background-image: linear-gradient(45deg,#492004,#8E4E08 15%,#B07024 20%,#FCCD69 40%,#B07024 70%,#8E4E08 85%,#492004);
+  box-shadow: inset 2px 2px 1px #100, 0 0 0.5em #100;
+  text-shadow: 1px 1px 1px rgba(255,187,120,.6);
+  border: .1em solid #FCCD69;
+  color: #100;
+}
+h2.etiquette {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  z-index: 101;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: .35em 1.7em .25em;
+  max-width: 100%;
+  letter-spacing: -.035em;
+  font-weight: 700;
+  white-space: nowrap;
+  color: rgba(0,0,0,.7);
+  pointer-events: all;
+  cursor: pointer;
+}
+h2.etiquette:after, h2.etiquette:before {
+  content: "";
+  position: absolute;
+  width: .3em;
+  height: .3em;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(45deg,#492004,#8E4E08 15%,#B07024 44%,#FCCD69 45%,#FCCD69 55%,#B07024 56%,#8E4E08 85%,#492004);
+  z-index: 1000;
+  box-shadow: -0.5px -0.5px 1px #FCCD69, 0.05em 0.05em 0.05em 0.05em #492004;
+  border-radius: 50%;
+}
+h2.etiquette:after {
+  left: .5em;
+}    
+h2.etiquette:before {
+  right: .5em;
+}
