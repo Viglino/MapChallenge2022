@@ -29,6 +29,9 @@
   text-align: center;
   display: block;
 }
+.ol-popup-content a {
+  color: #333;
+}
 
 .ol-popup.black > div {
   background-color: rgba(0,0,0,.85);

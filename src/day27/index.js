@@ -88,7 +88,7 @@ select.on('select', e => {
   const f = e.selected[0]
   if (f) {
     const elt = ol_ext_element.create('DIV', { 
-      html: f.get('resume') || f.get('nom'),
+      html: (f.get('resume') || f.get('nom')).replace(/<a href="/g, '<a target="_wiki" href="https://fr.wikipedia.org/'),
     })
     ol_ext_element.create('IMG', { 
       src: f.get('thumb'),
