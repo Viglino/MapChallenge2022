@@ -4,6 +4,12 @@ body.flat {
   background-image: url(https://img.freepik.com/photos-gratuite/plancher-bois-brun_53876-90802.jpg?w=2000);
   background-size: cover;
 }
+.flat h1 {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
 .flat .map {
   position: fixed;
   inset: 0!important;
@@ -34,7 +40,7 @@ body.flat {
 .compass  {
   position: fixed;
   bottom: 3em;
-  right: 1em;
+  left: 50%;
   width: 15em;
   height: 15em;
   max-height: 20vw;
@@ -45,6 +51,36 @@ body.flat {
   background-repeat: no-repeat;
   border-radius: 50%;
   box-shadow: 1em 2em 2em rgba(0,0,0,.9);
+  overflow: hidden;
+  transform: translate(-3em) translateX(50vh);
+}
+.notebook  {
+  position: fixed;
+  bottom: 3em;
+  right: 50%;
+  width: 40em;
+  height: 35em;
+  background-image: url(./notebook.png);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border-radius: 3em;
+  box-shadow: 1em 2em 2em rgba(0,0,0,.9);
+  overflow: hidden;
+  transform: rotate(-10deg) translateX(3em) translateX(-50vh);
+}
+.nes  {
+  position: fixed;
+  bottom: 50vh;
+  right: 50%;
+  width: 50vh;
+  height: 50vh;
+  background-image: url(./nes.png);
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  border-radius: 3em;
+  transform: translateX(50%) translateX(50vh) rotate(80deg);
   overflow: hidden;
 }
 
