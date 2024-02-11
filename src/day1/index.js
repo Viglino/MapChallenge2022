@@ -34,7 +34,7 @@ const layer = new VectorTileLayer({
     format: new MVTFormat({
       featureClass: Feature
     }),
-    url: 'https://wxs.ign.fr/topographie/geoportail/tms/1.0.0/BDTOPO/{z}/{x}/{y}.pbf'
+    url: 'https://data.geopf.fr/tms/1.0.0/BDTOPO/{z}/{x}/{y}.pbf'
   }),
   style: styleFn 
 })

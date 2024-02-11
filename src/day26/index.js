@@ -27,7 +27,7 @@ const elev = new TileLayer ({
   minResolution: 0,
   maxResolution: 197231.79878968254,
   source: new TileWMS({
-    url: 'https://wxs.ign.fr/altimetrie/geoportail/r/wms',
+    url: 'https://data.geopf.fr/wms-r',
     projection: 'EPSG:3857',
     attributions: [ 'Geoservices-IGN' ],
     crossOrigin: 'anonymous',

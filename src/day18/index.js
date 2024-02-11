@@ -28,6 +28,7 @@ import LayerSwitcher from 'ol-ext/control/LayerSwitcher'
 map.addControl(new LayerSwitcher)
 /**/
 
+ol_layer_Geoportail.register("ELEVATION.ELEVATIONGRIDCOVERAGE.HIGHRES", {"layer":"ELEVATION.ELEVATIONGRIDCOVERAGE.HIGHRES","theme":"altimetrie","desc":"Modèle Numérique de Terrain issu du RGEALTI","server":"https://data.geopf.fr/wmts","bbox":[-62.9528,-13.0078,45.3043,51.1053],"format":"image/x-bil;bits=32","minZoom":6,"maxZoom":14,"originators":{"Geoservices":{"attribution":"Géoservices","href":"https://geoservices.ign.fr/"}},"queryable":false,"style":"normal","tilematrix":"PM","title":"Modèle Numérique de Terrain issu du RGEALTI","legend":["https://data.geopf.fr/annexes/ressources/legendes/LEGEND.jpg"]});
 
 const elev = new TileLayer ({
   title: 'MNT-RGE-Alti',
@@ -36,7 +37,7 @@ const elev = new TileLayer ({
   minResolution: 0,
   maxResolution: 197231.79878968254,
   source: new TileWMS({
-    url: 'https://wxs.ign.fr/altimetrie/geoportail/r/wms',
+    url: 'https://data.geopf.fr/wms-r',
     projection: 'EPSG:3857',
     attributions: [ 'Geoservices-IGN' ],
     crossOrigin: 'anonymous',
@@ -74,7 +75,7 @@ elev.getSource().setTileLoadFunction(elevationMap(z => {
 }))
 
 
-ol_layer_Geoportail.register("ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW", {"key":"altimetrie","server":"https://wxs.ign.fr/geoportail/wmts","layer":"ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW","title":"Estompage","format":"image/png","style":"estompage_grayscale","queryable":false,"tilematrix":"PM","minZoom":0,"maxZoom":18,"bbox":[-63.186966,-21.406914,55.8884,50.9218],"desc":"Couche d'ombrage calculée à partir des données altimétriques de l'IGN permettant de mieux appréhender le relief. L'estompage proposé est réalisé à partir des données MNT BDAlti au pas de 25m avec deux soleils : un au nord-est de hauteur 45°, l'autre zénithal.","originators":{"IGN":{"href":"http://www.ign.fr","attribution":"Institut national de l'information géographique et forestière","logo":"https://wxs.ign.fr/static/logos/IGN/IGN.gif","minZoom":0,"maxZoom":18,"constraint":[{"minZoom":0,"maxZoom":18,"bbox":[-63.186966,-21.406914,55.8884,50.9218]}]}}});
+ol_layer_Geoportail.register("ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW", {"layer":"ELEVATION.ELEVATIONGRIDCOVERAGE.SHADOW","theme":"altimetrie","desc":"Couche d'ombrage calculée à partir des données altimétriques de l'IGN permettant de mieux appréhender le relief. L'estompage proposé est réalisé à partir des données MNT BDAlti au pas de 25m avec deux soleils : un au nord-est de hauteur 45°, l'autre zénithal.","server":"https://data.geopf.fr/wmts","bbox":[-63.187,-21.4069,55.8884,50.9218],"format":"image/png","minZoom":0,"maxZoom":15,"originators":{"Geoservices":{"attribution":"Géoservices","href":"https://geoservices.ign.fr/"}},"queryable":false,"style":"estompage_grayscale","tilematrix":"PM","title":"Estompage","legend":["https://data.geopf.fr/annexes/ressources/legendes/LEGEND.jpg"]});
 const shadow = new ol_layer_Geoportail({
   title: 'Estompage - by IGN-France',
   className: 'blend',
@@ -89,4 +90,5 @@ shadow.getSource().setTileLoadFunction(pixelTransform(function(p, i) {
 map.addLayer(shadow);
 
 elev.addFilter(new CSSFilter({ blend:'multiply' }));
+shadow.addFilter(new CSSFilter({ blend:'multiply' }));
 

@@ -36,11 +36,12 @@ window.game = game
 
 const backLayer = new Geoportail({ 
   preload: Infinity,
-  layer: 'ORTHOIMAGERY.ORTHOPHOTOS'
+  layer: 'ORTHOIMAGERY.ORTHOPHOTOS',
+  visible: false
 })
 map.addLayer(backLayer)
 
-Geoportail.register("GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS", {"key":"cartes","server":"https://wxs.ign.fr/geoportail/wmts","layer":"GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS","title":"Carte topographique - environs de Paris (1906)","format":"image/jpeg","style":"normal","queryable":false,"tilematrix":"PM","minZoom":10,"maxZoom":15,"bbox":[1.6294072,48.472553,3,49.15477],"desc":"Carte topographique de Paris et de ses environs éditée en 1906.","originators":{"IGN":{"href":"https://www.ign.fr","attribution":"Institut national de l'information géographique et forestière","logo":"https://wxs.ign.fr/static/logos/IGN/IGN.gif","minZoom":10,"maxZoom":15,"constraint":[{"minZoom":10,"maxZoom":15,"bbox":[1.6294072,48.472553,3,49.15477]}]}}});
+Geoportail.register("GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS", {"layer":"GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS","theme":"cartes","desc":"Carte topographique de Paris et de ses environs éditée en 1906.","server":"https://data.geopf.fr/wmts","bbox":[1.62941,48.4726,3,49.1548],"format":"image/jpeg","minZoom":10,"maxZoom":15,"originators":{"Geoservices":{"attribution":"Géoservices","href":"https://geoservices.ign.fr/"}},"queryable":false,"style":"normal","tilematrix":"PM","title":"Carte topographique - environs de Paris (1906)","legend":["https://data.geopf.fr/annexes/ressources/legendes/LEGEND.jpg"]});
 const layer = new Geoportail({ 
   layer: 'GEOGRAPHICALGRIDSYSTEMS.1900TYPEMAPS',
   extent: [200000, 6207837, 319247, 6298636]

@@ -41,10 +41,10 @@ const photo = new VectorLayer ({
       points: 4,
       angle: Math.PI / 4,
       fill: new Fill({
-        color: [0,0,0,.5]
+        color: [0,170,255,.5]
       }),
       stroke: new Stroke({
-        color: [0,0,0],
+        color: [0,170,255],
         width: 2.5
       })
     })

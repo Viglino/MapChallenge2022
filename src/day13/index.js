@@ -26,7 +26,7 @@ map.addLayer(photoLayer)
 const roadLayer = new Geoportail({ layer: 'TRANSPORTNETWORKS.ROADS' })
 map.addLayer(roadLayer)
 
-Geoportail.register("GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40", {"key":"cartes","server":"https://wxs.ign.fr/geoportail/wmts","layer":"GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40","title":"Carte de l'état-major (1820-1866)","format":"image/jpeg","style":"normal","queryable":false,"tilematrix":"PM","minZoom":6,"maxZoom":15,"bbox":[-6.0888886,41.18441,10.96101,51.274532],"desc":"Carte française en couleurs du XIXè siècle en couleurs superposable aux cartes et données modernes.","originators":{"IGN":{"href":"https://www.ign.fr","attribution":"Institut national de l'information géographique et forestière","logo":"https://wxs.ign.fr/static/logos/IGN/IGN.gif","minZoom":6,"maxZoom":15,"constraint":[{"minZoom":6,"maxZoom":15,"bbox":[-6.0888886,41.18441,10.96101,51.274532]}]}}});
+Geoportail.register("GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40", {"layer":"GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40","theme":"cartes","desc":"Carte française en couleurs du XIXè siècle en couleurs superposable aux cartes et données modernes.","server":"https://data.geopf.fr/wmts","bbox":[-6.08889,41.1844,10.961,51.2745],"format":"image/jpeg","minZoom":6,"maxZoom":15,"originators":{"Geoservices":{"attribution":"Géoservices","href":"https://geoservices.ign.fr/"}},"queryable":false,"style":"normal","tilematrix":"PM","title":"Carte de l'état-major (1820-1866)","legend":["https://data.geopf.fr/annexes/ressources/legendes/LEGEND.jpg"]});
 const oldLayer = new Geoportail({ 
   layer: 'GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40',
   visible: false

@@ -19,8 +19,9 @@ map.addLayer(backLayer)
 
 import TileWFS from 'ol-ext/source/TileWFS'
 import VectorLayer from 'ol/layer/Vector.js'
+
 var source = new TileWFS({
-  url: 'https://wxs.ign.fr/essentiels/geoportail/wfs',
+  url: 'https://data.geopf.fr/wfs/ows',
   typeName: 'BDTOPO_V3:batiment',
   tileZoom: 16
 });
